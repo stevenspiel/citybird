@@ -16,7 +16,7 @@
 /tmp
 
 #Ignore api keys in env local file
-.env.local
+/config/secrets.yml
 
 # Ignore the test coverage folder
 /coverage

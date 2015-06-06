@@ -40,15 +40,15 @@ describe 'user creation validation:' do
   end
 
   it 'should not allow creation without first_name' do
-      FactoryGirl.build(:user, :first_name => '').should_not be_valid
+      FactoryGirl.build(:user, first_name: '').should_not be_valid
   end
 
   it 'should not allow creation without last_name' do
-      FactoryGirl.build(:user, :last_name => '').should_not be_valid
+      FactoryGirl.build(:user, last_name: '').should_not be_valid
   end
 
   it 'should not allow creation without email' do
-      FactoryGirl.build(:user, :email => '').should_not be_valid
+      FactoryGirl.build(:user, email: '').should_not be_valid
   end
 
 end

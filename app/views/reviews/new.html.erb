@@ -1,4 +1,4 @@
-<%= form_for [current_user, @review], :html => {:id => "super_review_form"} do |f| %>
+<%= form_for [@current_user, @review], html: {id: "super_review_form"} do |f| %>
 <div class="meetup_info">
   <h3>Rate your meetup with:</h3>
   <div class="meetup_card">
@@ -13,12 +13,12 @@
         <div id="reviewee_rating">
         </div>
         <%= f.text_area :comment, cols: 40, rows: 4,
-                        :class => 'experience',
-                        :placeholder => 'How was your experience?' %>
+                        class: 'experience',
+                        placeholder: 'How was your experience?' %>
 
-        <%= f.hidden_field :meetup_id, :value => @meetup.id %>
-        <%= f.hidden_field :reviewee_id, :value => @reviewee.id %>
-        <%= f.hidden_field :reviewer_id, :value => @meetup.visitor_id %>
+        <%= f.hidden_field :meetup_id, value: @meetup.id %>
+        <%= f.hidden_field :reviewee_id, value: @reviewee.id %>
+        <%= f.hidden_field :reviewer_id, value: @meetup.visitor_id %>
 
         <%= f.submit %>
       <% end %>

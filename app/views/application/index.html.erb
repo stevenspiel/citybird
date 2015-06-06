@@ -15,14 +15,14 @@
     </div>
       <div id="tagline">a friend in every city</div>
 
-      <% if current_user %>
-        <% if current_user.is_ambassador == false %>
-          <%= link_to dashboard_path, :data => {no_turbolink: true} do %><span id="open_menu"><%= image_tag 'dashboard.png', :class => 'home_top_right', :id=> 'dashboard'  %></span><% end %>
+      <% if @current_user %>
+        <% if @current_user.is_ambassador == false %>
+          <%= link_to dashboard_path, data: {no_turbolink: true} do %><span id="open_menu"><%= image_tag 'dashboard.png', class: 'home_top_right', :id=> 'dashboard'  %></span><% end %>
         <% else %>
-          <%= link_to '#' do %><span id="open_menu"><%= image_tag 'left_arrow.png', :class => 'home_top_right', :id=> 'home_drop_down_toggle'  %></span><% end %>
+          <%= link_to '#' do %><span id="open_menu"><%= image_tag 'left_arrow.png', class: 'home_top_right', :id=> 'home_drop_down_toggle'  %></span><% end %>
           <div id="home_dropdown" class="hide">
-            <%= link_to dashboard_path, :data => {no_turbolink: true} do %><span id="open_menu"><%= image_tag 'dashboard.png', :class => 'home_top_right', :id=> 'dashboard'  %></span><% end %>
-            <%= link_to new_user_tour_path(current_user.id), :data => {no_turbolink: true} do %><span id="open_menu"><%= image_tag 'pin.png', :class => 'home_top_right', :id=> 'world'  %></span><% end %>
+            <%= link_to dashboard_path, data: {no_turbolink: true} do %><span id="open_menu"><%= image_tag 'dashboard.png', class: 'home_top_right', :id=> 'dashboard'  %></span><% end %>
+            <%= link_to new_user_tour_path(@current_user.id), data: {no_turbolink: true} do %><span id="open_menu"><%= image_tag 'pin.png', class: 'home_top_right', :id=> 'world'  %></span><% end %>
           </div>
         <% end %>
         <% else %>
@@ -34,13 +34,13 @@
   </div>
 
   <div id="search_container">
-    
-    
+
+
     <%= form_tag search_path, method: :get, id: 'search_form' do %>
-    
+
       <input id="pac-input" class="controls" type="text" placeholder="Where are you going?">
-      
-      
+
+
       <input id='initial_bounds' type='hidden' name='initial_bounds' value=''>
 
 
@@ -51,7 +51,7 @@
   </div>
 </div>
 
-  
+
 </div>
 <div id="marketing">
 

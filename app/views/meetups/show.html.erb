@@ -2,7 +2,7 @@
 <div class="meetup_info">
   <h3>Your meetup with:</h3>
   <div id="meetup_participants">
-    <% if @visitor.id == current_user.id %>
+    <% if @visitor.id == @current_user.id %>
       <div class="meetup_card">
         <span class="meetup_pic" style="background-image: url('<%= @ambassador.profile_pic %>')"></span>
         <div id="right_of_picture">
@@ -26,7 +26,7 @@
       </div>
     <% end %>
 
-    <% if @ambassador.id == current_user.id %>
+    <% if @ambassador.id == @current_user.id %>
       <div class="meetup_card">
         <span class="meetup_pic" style="background-image: url('<%= @visitor.profile_pic %>')"></span>
         <div id="right_of_picture">
@@ -45,8 +45,8 @@
             <% if @visitor.age %>
               <span class="meetup_age"> - <%= @visitor.age %></span>
             <% end %>
-          </span>            
-        </div>      
+          </span>
+        </div>
       </div>
     <% end %>
 

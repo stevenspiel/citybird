@@ -1,12 +1,11 @@
-
 class ReviewsController < ApplicationController
   def create
     @review = Review.new(create_params)
     respond_to do |format|
       if @review.save
-        format.json{ render :json => {new_url: dashboard_url}}
+        format.json{ render json: { new_url: dashboard_url }}
       else
-        format.json{ render :json => {errors: @review.errors.full_messages} }
+        format.json{ render json: { errors: @review.errors.full_messages }}
       end
     end
   end
@@ -22,6 +21,7 @@ class ReviewsController < ApplicationController
   end
 
   private
+
   def create_params
     params.require(:review).permit(:rating, :comment, :meetup_id, :reviewee_id, :reviewer_id)
   end

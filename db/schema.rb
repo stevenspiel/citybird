@@ -9,63 +9,60 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended that you check this file into your version control system.
+# It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227160602) do
+ActiveRecord::Schema.define(:version => 20140227160602) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "languages", force: true do |t|
+  create_table "languages", :force => true do |t|
     t.string   "language"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  create_table "languages_spokens", force: true do |t|
+  create_table "languages_spokens", :force => true do |t|
     t.integer  "user_id"
     t.integer  "language_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  create_table "meetups", force: true do |t|
+  create_table "meetups", :force => true do |t|
     t.integer  "ambassador_id"
     t.integer  "visitor_id"
     t.datetime "date_time"
     t.string   "address"
     t.integer  "tour_id"
     t.text     "meetup_notes"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
-  create_table "reviews", force: true do |t|
+  create_table "reviews", :force => true do |t|
     t.integer  "rating"
     t.text     "comment"
     t.integer  "meetup_id"
     t.integer  "reviewer_id"
     t.integer  "reviewee_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  create_table "specialties", force: true do |t|
+  create_table "specialties", :force => true do |t|
     t.string   "specialty"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
-  create_table "tours", force: true do |t|
+  create_table "tours", :force => true do |t|
     t.integer  "ambassador_id"
     t.float    "longitude"
     t.float    "latitude"
     t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
     t.string   "oauth_token"
@@ -79,20 +76,20 @@ ActiveRecord::Schema.define(version: 20140227160602) do
     t.text     "bio"
     t.string   "gender"
     t.string   "age"
-    t.boolean  "is_ambassador",           default: false
-    t.boolean  "ambassador_availability", default: false
+    t.boolean  "is_ambassador",           :default => false
+    t.boolean  "ambassador_availability", :default => false
     t.string   "tagline"
     t.string   "anonymous_email"
     t.integer  "authentication_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
   end
 
-  create_table "users_specialties", force: true do |t|
+  create_table "users_specialties", :force => true do |t|
     t.integer  "user_id"
     t.integer  "specialty_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end

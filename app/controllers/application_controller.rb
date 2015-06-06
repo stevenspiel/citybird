@@ -1,14 +1,16 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_action :require_login
-  skip_before_action :require_login, only: [:index, :error_error_routing_error]
+  before_filter :set_current_user
+  # before_filter :require_login
+  # skip_before_filter :require_login, only: [:index, :error_error_routing_error]
 
   def error_error_routing_error
     render :error_error_routing_error
   end
 
   private
-  def current_user
+
+  def set_current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
@@ -29,6 +31,4 @@ class ApplicationController < ActionController::Base
       session[:return_point] = path
     end
   end
-
-  helper_method :current_user, :return_point
 end

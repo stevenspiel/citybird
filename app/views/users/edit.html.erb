@@ -33,10 +33,10 @@
         <%= @user.name %>
       </h2>
       <div class="user_email">
-        <%= f.text_field :email, :placeholder => 'email' %>
+        <%= f.text_field :email, placeholder: 'email' %>
       </div>
       <div class="user_tagline">
-        <%= f.text_field :tagline, :placeholder => 'tagline' %>
+        <%= f.text_field :tagline, placeholder: 'tagline' %>
       </div>
     </div>
     <div id="under_picture">
@@ -45,13 +45,13 @@
         <%= f.radio_button :gender, 'female' %> Female
       </div>
       <div class="user_phone">
-        <%= f.text_field :phone, :placeholder => 'phone' %>
+        <%= f.text_field :phone, placeholder: 'phone' %>
       </div>
       <div class="user_age">
-        <%= f.text_field :age, :placeholder => 'age' %>
+        <%= f.text_field :age, placeholder: 'age' %>
       </div>
       <div class="user_bio">
-        <%= f.text_area :bio, :placeholder => 'bio' %>
+        <%= f.text_area :bio, placeholder: 'bio' %>
       </div>
       <% if @user.is_ambassador %>
         <hr/>
@@ -70,7 +70,7 @@
         </div>
       <% end %>
       <div>
-        <%= f.submit "Update", :class => 'orange_button'  %> <span id="saving_success"></span>
+        <%= f.submit "Update", class: 'orange_button'  %> <span id="saving_success"></span>
       </div>
       <ul id="errors"></ul>
     </div>

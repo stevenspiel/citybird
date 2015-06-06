@@ -3,9 +3,7 @@
 _Description:_
   - Make meaningful connections. Be an ambassador to your city. Make new memories with a new friend._
 _Deployed Test Site:_
-  - <a href='http://city-bird.herokuapp.com/'>City Bird</a>
-  - Login: public_pnjzbca_tester@tfbnw.net
-  - Password: 123456
+  - <a href='http://city-bird.co/'>City Bird</a>
 
 ## Table of Contents
 
@@ -28,7 +26,7 @@ _Deployed Test Site:_
 
 _How do I, as a developer, start working on the project?_
   - Start by cloning the project!
-  - `$git clone https://github.com/jpark3000/find_a_guide folder_to_be_createds_name`
+  - `$git clone https://github.com/stevenspiel/city_bird`
   - *** The $ symbol at the start of the line denotes the command/terminal line.
 
 1. _What dependencies does it have (where are they expressed) and how do I install them?_

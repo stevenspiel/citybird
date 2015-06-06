@@ -15,7 +15,7 @@
 
 
 
-  
+
 
 <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places" %>
 <%= javascript_include_tag "map" %>
@@ -30,7 +30,7 @@
     this.$el.dialog({
       modal: true,
       dialogClass: "no-close",
-      autoOpen: <%= current_user.rusty? ? 'true' : 'false' %>,
+      autoOpen: <%= @current_user.rusty? ? 'true' : 'false' %>,
       buttons: {
         OK: function() {
           $( this ).dialog( "close" );
