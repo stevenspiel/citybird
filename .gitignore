@@ -17,6 +17,9 @@
 
 #Ignore api keys in env local file
 /config/secrets.yml
+/config/database.yml
 
 # Ignore the test coverage folder
 /coverage
+
+sftp-config.json

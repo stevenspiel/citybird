@@ -1,22 +1,28 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '4.2.0'
 gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails', '~> 5.0'
+  gem 'uglifier', '>= 1.3.0'
+  gem 'coffee-rails', '~> 4.1.0'
 end
 
 group :doc do
-  gem 'sdoc', require: false
+  gem 'sdoc', '~> 0.4.0', require: false
 end
 
 group :development do
   gem 'pry-nav'
+end
+
+group :development, :test do
+  gem 'capistrano-rails'
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
 end
 
 group :test do
@@ -33,9 +39,12 @@ group :production do
   gem 'rails_12factor'
 end
 
+gem 'psych'
 gem 'jquery-rails', "~> 2.3.0"
 gem 'turbolinks'
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 2.0'
+gem 'execjs'
+gem 'therubyracer', :platforms => :ruby
 gem 'faker'
 gem 'dotenv-rails'
 gem "rest-client", "~> 1.6.7"

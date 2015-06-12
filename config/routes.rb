@@ -1,4 +1,4 @@
-CityBird::Application.routes.draw do
+Citybird::Application.routes.draw do
   root to: 'landing_page#index'
 
   match '/users/toggle_ambassador', to: 'users#ambassador_toggle', via: [:put]

@@ -7,7 +7,6 @@ development:
   username: root
   password:
   socket: /tmp/mysql.sock
-  host: localhost
 
 test:
   adapter: mysql2
@@ -18,15 +17,13 @@ test:
   username: root
   password:
   socket: /tmp/mysql.sock
-  host: localhost
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: stevensp_citybird
+  database: citybird_production
   pool: 5
-  username: stevensp_iel
-  password: Hap9ines5!
+  username: root
+  password:
   socket: /tmp/mysql.sock
-

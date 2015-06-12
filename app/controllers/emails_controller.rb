@@ -1,20 +1,25 @@
 class EmailsController < ApplicationController
-   skip_before_filter :verify_authenticity_token
-   skip_before_filter :require_login, only: [:reject, :reply]
-   # include ActionController::Base.helpers
+  skip_before_filter :verify_authenticity_token
+  skip_before_filter :require_login, only: [:reject, :reply]
+  # include ActionController::Base.helpers
 
   def reply
-   @recipient = User.find_by(anonymous_email: params[:recipient])
-   @sender = User.find_by(email: params[:sender])
-   @body = params["stripped-text"].split("\n")
-   @signature = params["stripped-signature"]
-   html = render_to_string "reply", layout: false
-   # text = strip_tags(html)
+    @recipient = User.find_by(anonymous_email: params[:recipient])
+    @sender = User.find_by(email: params[:sender])
+    @body = params["stripped-text"].split("\n")
+    @signature = params["stripped-signature"]
+    html = render_to_string "reply", layout: false
 
-   message = {to: @recipient.email, html: html, from: 'citybird@sandbox57336.mailgun.org', subject: params[:subject], "h:ReplyTo": @sender.anonymous_email}
-   Email.send_message(message)
+    message = {
+     to: @recipient.email,
+     html: html,
+     from: 'citybird@sandbox57336.mailgun.org',
+     subject: params[:subject],
+     "h:ReplyTo" => @sender.anonymous_email
+    }
 
-   render text: "OK"
+    Email.send_message(message)
+    render text: "OK"
   end
 
   def new_request
